@@ -12,10 +12,6 @@ func main() {
 		MyAge: calculateMyAge(),
 	}
 
-	if _, err := os.Stat("/static/index.html"); os.IsNotExist(err) {
-		check(os.MkdirAll("static/", 0700))
-	}
-
 	fp, err := os.Create("static/index.html")
 	check(err)
 	defer fp.Close()
